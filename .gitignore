@@ -1,0 +1,14 @@
+node_modules/
+.idea/
+*.log
+*.lock
+.DS_Store
+.publish
+Thumbs.db
+.htmlhintrc
+.editorconfig
+.stylelintrc.json
+package-lock.json
+csscomb.json
+singolo1.png
+singolo1.psd
