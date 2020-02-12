@@ -1,0 +1,41 @@
+/* light reset */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* generel background */
+.general-bg-wrap {
+  width: 100vw;
+  height: 100vh;
+}
+
+.header-bg-wrap {
+  width: 100vw;
+  height: 89px;
+  background-color: #2d303a;
+}
+
+.header-bottom-border {
+  border-bottom: 6px solid #323746;
+}
+
+.slider-bg-wrap {
+  width: 100vw;
+  height: 600px;
+  background-color: #f06c64;
+}
+
+.slider-bottom-border {
+  border-bottom: 15px solid #ea676b;
+}
+
+.content-bg-wrap {
+  width: 100vw;
+  background-color: #ffffff;
+}
+
+.center-wrapper {
+  max-width: 1020px;
+  margin: 0 auto;
+}
