@@ -12,6 +12,11 @@ li {
   list-style-type: none;
 }
 
+button {
+  background-color: transparent;
+  border: none;
+}
+
 /* fonts */
 @font-face {
   font-family: "Lato Regular";
@@ -138,4 +143,56 @@ li {
 
 .navbar li:last-of-type::after {
   content: none;
+}
+
+/* Slider styles */
+.slider {
+  position: relative;
+  height: 594px;
+}
+
+.slider-btn {
+  position: absolute;
+  top: 50%;
+  width: 16px;
+  height: 27px;
+  transform: translateY(-56%);
+  cursor: pointer;
+  fill: #ca4549;
+  stroke: none;
+  transition: fill 0.5s ease;
+}
+
+.slider-btn:hover {
+  fill: #ffffff;
+}
+
+.left {
+  left: 11px;
+}
+
+.right {
+  right: 11px;
+}
+
+.phone {
+  position: absolute;
+  border-radius: 27px;
+  box-shadow: 25px 25px 2px 0 rgba(0, 0, 0, 0.15);
+}
+
+.vertical {
+  left: 82px;
+  top: 53px;
+  width: 215px;
+  height: 458px;
+  background-image: url("./assets/img/vertical_phone.png");
+}
+
+.horizontal {
+  left: 395px;
+  top: 174px;
+  width: 458px;
+  height: 215px;
+  background-image: url("./assets/img/horizontal_phone.png");
 }
