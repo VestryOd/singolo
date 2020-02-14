@@ -19,25 +19,33 @@ button {
 
 /* fonts */
 @font-face {
-  font-family: "Lato Regular";
+  font-family: "Lato";
+  font-style: normal;
+  font-weight: 400;
   src: url("./assets/fonts/lato-regular.woff2") format("woff2"),
     url("./assets/fonts/lato-regular.woff") format("woff");
 }
 
 @font-face {
-  font-family: "Lato Light";
+  font-family: "Lato";
+  font-style: normal;
+  font-weight: 300;
   src: url("./assets/fonts/lato-light.woff2") format("woff2"),
     url("./assets/fonts/lato-light.woff") format("woff");
 }
 
 @font-face {
-  font-family: "Lato Bold";
+  font-family: "Lato";
+  font-style: normal;
+  font-weight: 700;
   src: url("./assets/fonts/lato-bold.woff2") format("woff2"),
     url("./assets/fonts/lato-bold.woff") format("woff");
 }
 
 @font-face {
   font-family: "Lato Black";
+  font-style: normal;
+  font-weight: 900;
   src: url("./assets/fonts/lato-black.woff2") format("woff2"),
     url("./assets/fonts/lato-black.woff") format("woff");
 }
@@ -100,7 +108,8 @@ button {
 .logo,
 .asterics,
 .navbar li a {
-  font-family: "Lato Bold", "Arial-Bold", serif;
+  font-family: "Lato", "Arial-Bold", serif;
+  font-weight: 700;
   color: #ffffff;
   text-transform: uppercase;
 }
@@ -132,7 +141,8 @@ button {
   display: inline-block;
   padding: 0 0.86em 0 0.9em;
   content: "·";
-  font-family: "Lato Bold", "Arial-Bold", serif;
+  font-family: "Lato", "Arial-Bold", serif;
+  font-weight: 700;
   font-size: 12px;
   letter-spacing: 0.01em;
   color: #494e62;
