@@ -67,7 +67,7 @@ li {
 /* header styles */
 .header-bg-wrap {
   width: 100vw;
-  height: 89px;
+  padding: 31px 0 30px 0;
   border-bottom: 6px solid #323746;
   background-color: #2d303a;
 }
@@ -88,22 +88,20 @@ li {
 
 .navbar {
   width: 100%;
-  /* display: inline-block; */
-  padding: 0 10px;
+  padding: 9px 10px 0 10px;
 }
 
 .logo,
 .asterics,
 .navbar li a {
   font-family: "Lato Bold", "Arial-Bold", serif;
-  line-height: 90px;
   color: #ffffff;
   text-transform: uppercase;
 }
 
 .logo {
   font-size: 25px;
-  letter-spacing: -0.027em;
+  letter-spacing: -0.02em;
 }
 
 .asterics {
@@ -117,7 +115,6 @@ li {
 
 .navbar li a {
   font-size: 12px;
-  line-height: 99px;
   transition: color 0.5s ease;
 }
 
@@ -127,10 +124,11 @@ li {
 
 .navbar li::after {
   display: inline-block;
-  padding: 0 0.88em;
+  padding: 0 0.86em 0 0.9em;
   content: "·";
   font-family: "Lato Bold", "Arial-Bold", serif;
   font-size: 12px;
+  letter-spacing: 0.01em;
   color: #494e62;
 }
 
