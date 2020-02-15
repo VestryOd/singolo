@@ -4,6 +4,34 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Singolo</title>
+    <!-- Pixel Glass -->
+    <style>
+      html {
+        background-repeat: no-repeat;
+        background-position: 50% 0;
+        /* По умолчанию показывается мобильный макет */
+        background-image: url("singolo1.png");
+      }
+
+      /* Планшет */
+      @media (min-width: 760px) {
+        html {
+          /* Планшетный макет */
+          background-image: url("singolo1.png");
+        }
+      }
+
+      /* Десктоп */
+      @media (min-width: 960px) {
+        html {
+          /* Десктопный макет */
+          background-image: url("singolo1.png");
+        }
+      }
+    </style>
+    <link href="node_modules/pixel-glass/styles.css" rel="stylesheet">
+    <script src="node_modules/pixel-glass/script.js"></script>
+    <!-- // Pixel Glass -->
   <link rel="stylesheet" href="singolo1.css">
 </head>
 <body>
@@ -13,8 +41,9 @@
         <header>
           <div class="wrapper header">
             <div class="logo-wrap">
-              <h1 class="headline">singolo</h1>
-              <span class="logo">singolo</span><span class="asterics">*</span>
+              <h1>
+                <span class="logo">singolo</span><span class="asterics">*</span>
+              </h1>
             </div>
             <nav>
               <ul class="navbar">
@@ -72,7 +101,94 @@
       </div>
       <div class="content-bg-wrap">
         <div class="container">
-
+          <section>
+            <div class="wrapper">
+              <header>
+                <div class="section-header-wrapper">
+                  <h2 class="section-header-title">our services</h2>
+                  <p class="section-header-description">Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum. Duis mollis, non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
+                </div>
+              </header>
+              <div class="section-content-wrapper">
+                <div class="section-content-row">
+                  <div class="services-item">
+                    <div class="services-icon-wrapper">
+                      <div class="services-icon">
+                        <img src="./assets/img/pen.svg" alt="Pen">
+                      </div>
+                    </div>
+                    <div class="services-content-wrapper">
+                      <h3 class="services-item-title">Custom Design</h3>
+                      <p class="services-item-description">Curabitur vestibulum eget mauris quis laoreet. Phasellus in quam laoreet, viverra
+                        lacus ut, ultrices velit.</p>
+                    </div>
+                  </div>
+                  <div class="services-item">
+                    <div class="services-icon-wrapper">
+                      <div class="services-icon">
+                        <img src="./assets/img/bulb.svg" alt="Bulb">
+                      </div>
+                    </div>
+                    <div class="services-content-wrapper">
+                      <h3 class="services-item-title">Inovative Ideas</h3>
+                      <p class="services-item-description">Quisque luctus, quam eget molestie commodo, lacus purus cursus purus, nec rutrum
+                        tellus dolor id lorem.</p>
+                    </div>
+                  </div>
+                  <div class="services-item">
+                    <div class="services-icon-wrapper">
+                      <div class="services-icon">
+                        <img src="./assets/img/heart.svg" alt="Heart">
+                      </div>
+                    </div>
+                    <div class="services-content-wrapper">
+                      <h3 class="services-item-title">Love Is The Answer</h3>
+                      <p class="services-item-description">Nulla sed nunc et tortor luctus faucibus. Morbi at aliquet turpis, et consequat
+                        felis. Quisque condimentum.</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="section-content-row">
+                  <div class="services-item">
+                    <div class="services-icon-wrapper">
+                      <div class="services-icon">
+                        <img src="./assets/img/phone.svg" alt="Phone">
+                      </div>
+                    </div>
+                    <div class="services-content-wrapper">
+                      <h3 class="services-item-title">Responsive Layout</h3>
+                      <p class="services-item-description">Sed porttitor placerat rhoncus. In at nunc tellus. Maecenas blandit nunc ligula.
+                        Praesent elit leo.</p>
+                    </div>
+                  </div>
+                  <div class="services-item">
+                    <div class="services-icon-wrapper">
+                      <div class="services-icon">
+                        <img src="./assets/img/bubble.svg" alt="Bubble">
+                      </div>
+                    </div>
+                    <div class="services-content-wrapper">
+                      <h3 class="services-item-title">24 / 7 Support</h3>
+                      <p class="services-item-description">Vivamus vel quam lacinia, tincidunt dui non, vehicula nisi. Nulla a sem erat.
+                        Pellentesque egestas venenatis lorem .</p>
+                    </div>
+                  </div>
+                  <div class="services-item">
+                    <div class="services-icon-wrapper">
+                      <div class="services-icon">
+                        <img src="./assets/img/star.svg" alt="Star">
+                      </div>
+                    </div>
+                    <div class="services-content-wrapper">
+                      <h3 class="services-item-title">Feel Like A Star</h3>
+                      <p class="services-item-description">Quisque hendrerit purus dapibus, ornare nibh vitae, viverra nibh. Fusce vitae
+                        aliquam tellus.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
         </div>
       </div>
     </main>
