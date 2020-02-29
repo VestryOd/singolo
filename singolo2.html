@@ -5,6 +5,34 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Singolo</title>
   <link rel="stylesheet" href="singolo2.css">
+  <!-- Pixel Glass -->
+  <style>
+    html {
+      background-repeat: no-repeat;
+      background-position: 50% 0;
+      /* Mobile layout by default */
+      background-image: url("../layouts_singolo/singolo2.png");
+    }
+
+    /* Tablet */
+    @media (min-width: 760px) {
+      html {
+        /* Tablet layout */
+        background-image: url("../layouts_singolo/singolo2.png");
+      }
+    }
+
+    /* Desktop */
+    @media (min-width: 960px) {
+      html {
+        /* Desktop layout */
+        background-image: url("../layouts_singolo/singolo2.png");
+      }
+    }
+  </style>
+  <link href="./node_modules/pixel-glass/styles.css" rel="stylesheet">
+  <script src="./node_modules/pixel-glass/script.js"></script>
+  <!-- // Pixel Glass -->
 </head>
 <body>
   <main>
@@ -49,6 +77,58 @@
         </section>
       </div>
     </div>
+      <div class="about-bg-wrap">
+        <div class="container">
+          <section>
+            <div class="wrapper">
+              <header>
+                <div class="section-header-wrapper">
+                  <h2 class="section-header-title">about us</h2>
+                <p class="section-header-description">Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum. Duis mollis, non commodo luctus, nisi erat porttitor
+                ligula, eget lacinia odio sem nec elit. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
+                </div>
+              </header>
+              <div class="about-content-wrapper">
+                <div class="about-content-row">
+                  <div class="about-item">
+                    <img class="person-image" src="./assets/img/about_us/persons/adam_jensen.png" alt="Adam Jensen">
+                    <h3 class="persone-name">Adam Jensen</h3>
+                    <p class="person-description">Quisque luctus, quam eget molestie commodo, lacus purus cursus purus, nec rutrum tellus dolor id lorem.</p>
+                    <div class="social-links-wrapper">
+                      <div class="link-wrapper"><a href="#"><span class="about-social facebook"></span></a></div>
+                      <div class="link-wrapper"><a href="#"><span class="about-social google-p"></span></a></div>
+                      <div class="link-wrapper"><a href="#"><span class="about-social twitter"></span></a></div>
+                      <div class="link-wrapper"><a href="#"><span class="about-social linked-in"></span></a></div>
+                    </div>
+                  </div>
+                  <div class="about-item">
+                    <img class="person-image" src="./assets/img/about_us/persons/desmond_miles.png" alt="Desmond Miles">
+                    <h3 class="persone-name">Desmond Miles</h3>
+                    <p class="person-description">Curabitur vestibulum eget mauris quis laoreet. Phasellus in quam laoreet, viverra lacus ut, ultrices velit.</p>
+                    <div class="social-links-wrapper">
+                      <div class="link-wrapper"><a href="#"><span class="about-social facebook"></span></a></div>
+                      <div class="link-wrapper"><a href="#"><span class="about-social google-p"></span></a></div>
+                      <div class="link-wrapper"><a href="#"><span class="about-social twitter"></span></a></div>
+                      <div class="link-wrapper"><a href="#"><span class="about-social linked-in"></span></a></div>
+                    </div>
+                  </div>
+                  <div class="about-item">
+                    <img class="person-image" src="./assets/img/about_us/persons/scolara_visari.png" alt="Scolara Visari">
+                    <h3 class="persone-name">Scolara Visari</h3>
+                    <p class="person-description">Nulla sed nunc et tortor luctus faucibus. Morbi at aliquet turpis, et consequat felis. Quisque condimentum.</p>
+                    <div class="social-links-wrapper">
+                      <div class="link-wrapper"><a href="#"><span class="about-social facebook"></span></a></div>
+                      <div class="link-wrapper"><a href="#"><span class="about-social google-p"></span></a></div>
+                      <div class="link-wrapper"><a href="#"><span class="about-social twitter"></span></a></div>
+                      <div class="link-wrapper"><a href="#"><span class="about-social linked-in"></span></a></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
     </main>
 </body>
 </html>
