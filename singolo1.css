@@ -148,6 +148,7 @@ button {
   transition: color 0.5s ease;
 }
 
+.navbar li .selected,
 .navbar li a:hover {
   color: #f06c64;
 }
