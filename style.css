@@ -447,11 +447,16 @@ button {
   transition: all 0.3s ease;
 }
 
-.link-wrapper:hover {
-  background-color: #666d89;
+.link-wrapper:last-of-type {
+  margin: 0;
 }
 
-.link-wrapper .about-social {
+.link-wrapper:hover {
+  background-color: #666d89;
+  border-color: #ffffff;
+}
+
+.link-wrapper .social {
   display: block;
   box-sizing: border-box;
   width: 100%;
@@ -499,4 +504,172 @@ button {
 .linked-in:hover {
   background-image: url("./assets/img/about_us/icons/linkedin_white.svg");
   background-size: 15px;
+}
+
+/* part 3 styles */
+/* Quote section */
+.quotes * {
+  color: #f0d8d9;
+}
+
+.quotes .section-header-title {
+  text-transform: none;
+  padding-top: 1px;
+}
+
+.quotes .section-header-description {
+  padding: 27px 0 30px 0;
+}
+
+.quotes-content-wrapper {
+  display: flex;
+  padding-top: 6px;
+}
+
+.form-wrapper {
+  max-width: 660px;
+  width: 100%;
+}
+
+.input-wrapper {
+  padding: 8px 10px;
+}
+
+.input-wrapper * {
+  width: 100%;
+  padding: 7px 15px;
+  box-sizing: border-box;
+  outline: none;
+  border: 1px solid transparent;
+  border-radius: 5px;
+  background-color: #d6564f;
+  font-size: 12px;
+  line-height: 22px;
+  font-family: "Lato", "Arial", sans-serif;
+  font-weight: 400;
+  text-align: left;
+  transition: all 0.3s ease;
+}
+
+.input-wrapper *::placeholder {
+  color: #f48c8f;
+}
+
+.input-wrapper *:focus::placeholder {
+  color: #666d89;
+}
+
+.input-wrapper *:focus {
+  background-color: #ffffff;
+  color: #2d303a;
+}
+
+.input-wrapper textarea {
+  height: 202px;
+  padding-bottom: 4px;
+  resize: none;
+  line-height: 19px;
+}
+
+.input-wrapper input[type="submit"] {
+  width: 100px;
+  border: 1px solid #ffffff;
+  color: #ffffff;
+  text-align: center;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.input-wrapper input[type="submit"]:hover,
+.input-wrapper input[type="submit"]:focus {
+  color: #f48c8f;
+  background-color: #ffffff;
+  box-shadow: 2px 2px 3px 0 rgba(0, 0, 0, 0.5);
+}
+
+.input-wrapper:last-of-type {
+  padding-bottom: 10px;
+}
+
+.button-aligh-center {
+  display: flex;
+  justify-content: center;
+}
+
+.contacts-wrapper {
+  max-width: 300px;
+  width: 100%;
+  padding: 8px 10px 10px 10px;
+}
+
+.contacts-title {
+  font-size: 18px;
+  line-height: 18px;
+  font-weight: 900;
+  letter-spacing: -0.005rem;
+}
+
+.contacts-description {
+  padding: 10px 0 20px 0;
+  font-size: 12px;
+  line-height: 22px;
+  font-weight: 400;
+  text-align: justify;
+  letter-spacing: -0.007rem;
+  word-spacing: -0.015rem;
+}
+
+.contact-item {
+  font-size: 12px;
+  line-height: 22px;
+  font-weight: 400;
+}
+
+.contact-item a {
+  transition: all 0.3s ease;
+}
+
+.contact-item a:hover {
+  color: #ffffff;
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.6);
+}
+
+.icon {
+  display: inline-block;
+  width: 12px;
+  height: 11px;
+  margin-right: 9px;
+  background-position: center bottom;
+  background-repeat: no-repeat;
+}
+
+.icon-geo {
+  background-image: url("./assets/img/quote/form_icons/form_geo.svg");
+}
+
+.icon-phone {
+  background-image: url("./assets/img/quote/form_icons/form_phone.svg");
+}
+
+.icon-mail {
+  background-image: url("./assets/img/quote/form_icons/form_mail.svg");
+}
+
+/* footer */
+.footer {
+  background-color: #2d303a;
+  color: #ffffff;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 22px 10px;
+}
+
+.copyright-wrapper p {
+  font-size: 12px;
+  letter-spacing: -0.005rem;
+  color: #666d89;
 }
