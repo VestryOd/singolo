@@ -96,7 +96,7 @@ button {
 /* header styles */
 .header-bg-wrap {
   width: 100%;
-  padding: 24px 0 27px 0;
+  padding: 24px 0 28px 0;
   border-bottom: 6px solid #323746;
   background-color: #2d303a;
 }
@@ -104,6 +104,7 @@ button {
 .header {
   display: flex;
   justify-content: space-between;
+  padding-left: 38px;
 }
 
 .logo-wrap {
@@ -117,7 +118,7 @@ button {
 
 .navbar {
   width: 100%;
-  padding: 14px 17px 0 10px;
+  padding: 15px 10px 0 10px;
 }
 
 .logo,
@@ -242,7 +243,7 @@ button {
 }
 
 .section-header-description {
-  padding: 28px 0 30px 0;
+  padding: 27px 0 29px 0;
   text-align: justify;
   font-family: "Lato", "Arial", sans-serif;
   font-size: 18px;
@@ -257,7 +258,7 @@ button {
 
 .section-content-row {
   display: flex;
-  padding: 12px 0;
+  padding: 12px 0 13px 0;
 }
 
 .section-content-row:last-child {
@@ -297,7 +298,7 @@ button {
 }
 
 .services-item-title {
-  padding-bottom: 7px;
+  padding-bottom: 8px;
   font-size: 18px;
   line-height: 18px;
   font-family: "Lato", "Arial", sans-serif;
