@@ -229,3 +229,86 @@ button {
 .mail {
   background-image: url("./assets/img/quote/form_icons/form_mail.svg");
 }
+
+/* footer */
+.footer {
+  background-color: #2d303a;
+  color: #ffffff;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 22px 10px;
+}
+
+.social-links-wrapper {
+  display: flex;
+}
+
+.link-wrapper {
+  margin-right: 8px;
+  width: 32px;
+  height: 32px;
+  box-sizing: border-box;
+  border: 1px solid #666d89;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.link-wrapper:hover {
+  background-color: #666d89;
+  border-color: #ffffff;
+}
+
+.link-wrapper .footer-social {
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  background-position: center center;
+  background-repeat: no-repeat;
+  transition: all 0.3s ease;
+}
+
+.facebook {
+  background-image: url("./assets/img/footer/icons/facebook.svg");
+  background-size: 8px;
+}
+
+.facebook:hover {
+  background-image: url("./assets/img/footer/icons/facebook_white.svg");
+  background-size: 8px;
+}
+
+.google-p {
+  background-image: url("./assets/img/footer/icons/google-p.svg");
+  background-size: 15px;
+}
+
+.google-p:hover {
+  background-image: url("./assets/img/footer/icons/google-p_white.svg");
+  background-size: 15px;
+}
+
+.twitter {
+  background-image: url("./assets/img/footer/icons/twitter.svg");
+  background-size: 16px;
+}
+
+.twitter:hover {
+  background-image: url("./assets/img/footer/icons/twitter_white.svg");
+  background-size: 16px;
+}
+
+.linked-in {
+  background-image: url("./assets/img/footer/icons/linkedin.svg");
+  background-size: 15px;
+}
+
+.linked-in:hover {
+  background-image: url("./assets/img/footer/icons/linkedin_white.svg");
+  background-size: 15px;
+}
