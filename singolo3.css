@@ -1,0 +1,231 @@
+/* light reset */
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Lato", "Arial", "Helvetica", sans-serif;
+  /* outline: 1px solid red; */
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style-type: none;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+}
+
+/* fonts */
+/* lato-300 - latin */
+@font-face {
+  font-family: "Lato";
+  font-style: normal;
+  font-weight: 300;
+  src: local("Lato Light"),
+    local("Lato-Light"),
+    url("./assets/fonts/lato-light.woff2") format("woff2"),
+    url("./assets/fonts/lato-light.woff") format("woff");
+}
+
+/* lato-regular - latin */
+@font-face {
+  font-family: "Lato";
+  font-style: normal;
+  font-weight: 400;
+  src: local("Lato Regular"),
+    local("Lato-Regular"),
+    url("./assets/fonts/lato-regular.woff2") format("woff2"),
+    url("./assets/fonts/lato-regular.woff") format("woff");
+}
+
+/* lato-700 - latin */
+@font-face {
+  font-family: "Lato";
+  font-style: normal;
+  font-weight: 700;
+  src: local("Lato Bold"),
+    local("Lato-Bold"),
+    url("./assets/fonts/lato-bold.woff2") format("woff2"),
+    url("./assets/fonts/lato-bold.woff") format("woff");
+}
+
+/* lato-900 - latin */
+@font-face {
+  font-family: "Lato";
+  font-style: normal;
+  font-weight: 900;
+  src: local("Lato Black"),
+    local("Lato-Black"),
+    url("./assets/fonts/lato-black.woff2") format("woff2"),
+    url("./assets/fonts/lato-black.woff") format("woff");
+}
+
+/* generel background */
+.quotes-bg-wrap {
+  width: 100%;
+  background-color: #f06c64;
+  border-bottom: 6px solid #ea676b;
+}
+
+.container {
+  max-width: 1020px;
+  margin: 0 auto;
+}
+
+.wrapper {
+  padding: 0 30px;
+  overflow-x: hidden;
+}
+
+.section-header-title {
+  padding-top: 2px;
+  font-family: "Lato", "Arial", sans-serif;
+  font-size: 30px;
+  font-weight: 900;
+  line-height: 18px;
+  letter-spacing: -0.007em;
+  text-transform: capitalize;
+  color: #666d89;
+}
+
+.section-header-description {
+  padding: 28px 0 30px 0;
+  text-align: justify;
+  font-family: "Lato", "Arial", sans-serif;
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 30px;
+  color: #767e9e;
+}
+
+.section-header-wrapper {
+  padding: 0 10px;
+  padding-top: 67px;
+}
+
+/* Quote section */
+.quotes * {
+  color: #f0d8d9;
+}
+
+.quotes .section-header-title {
+  text-transform: none;
+}
+
+.quotes-content-wrapper {
+  display: flex;
+}
+
+.form-wrapper {
+  max-width: 640px;
+  width: 100%;
+}
+
+.input-wrapper {
+  padding: 10px;
+}
+
+.input-wrapper * {
+  width: 100%;
+  padding: 3px 2px;
+  box-sizing: border-box;
+  outline: none;
+  border: 1px solid transparent;
+  border-radius: 5px;
+  background-color: #d6564f;
+  font-size: 12px;
+  line-height: 22px;
+  /* color: #f48c8f; */
+  font-family: "Lato", "Arial", sans-serif;
+  font-weight: 400;
+  text-align: left;
+}
+
+.input-wrapper *::placeholder {
+  color: #f48c8f;
+}
+
+.input-wrapper textarea {
+  resize: none;
+}
+
+.input-wrapper input[type="submit"] {
+  width: 100px;
+  border: 1px solid #ffffff;
+  color: #ffffff;
+  text-align: center;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.input-wrapper input[type="submit"]:hover {
+  color: #f48c8f;
+  background-color: #ffffff;
+  box-shadow: 2px 2px 3px 0 rgba(0, 0, 0, 0.5);
+}
+
+.button-aligh-center {
+  display: flex;
+  justify-content: center;
+}
+
+.contacts-wrapper {
+  max-width: 320px;
+  width: 100%;
+  padding: 10px;
+}
+
+.contacts-title {
+  font-size: 18px;
+  line-height: 18px;
+  font-weight: 900;
+}
+
+.contacts-description {
+  padding: 18px 0 30px 0;
+  font-size: 12px;
+  line-height: 22px;
+  font-weight: 400;
+}
+
+.contact-item {
+  padding: 6px 0;
+  font-size: 12px;
+  line-height: 22px;
+  font-weight: 400;
+}
+
+.contact-item a {
+  transition: all 0.3s ease;
+}
+
+.contact-item a:hover {
+  color: #ffffff;
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.6);
+}
+
+.icon {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  margin-right: 18px;
+  background-position: center bottom;
+  background-repeat: no-repeat;
+}
+
+.geo {
+  background-image: url("./assets/img/quote/form_icons/form_geo.svg");
+}
+
+.phone {
+  background-image: url("./assets/img/quote/form_icons/form_phone.svg");
+}
+
+.mail {
+  background-image: url("./assets/img/quote/form_icons/form_mail.svg");
+}
