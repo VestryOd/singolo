@@ -314,6 +314,7 @@ button {
 }
 
 .services-item-description {
+  overflow: hidden;
   padding-right: 2px;
   font-size: 12px;
   line-height: 22px;
@@ -368,6 +369,7 @@ button {
 }
 
 .portfolio-content-row {
+  overflow: hidden;
   display: flex;
   flex-direction: row;
 }
@@ -413,6 +415,9 @@ button {
 }
 
 .persone-name {
+  overflow: hidden;
+  word-wrap: normal;
+  white-space: nowrap;
   padding: 14px 0 10px 0;
   font-size: 18px;
   line-height: 18px;
