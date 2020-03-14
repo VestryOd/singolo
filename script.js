@@ -1,5 +1,6 @@
 'use strict'
 window.onload = function() {
+  //slider section
   const slides = document.querySelectorAll('.slide');
   slides.forEach((el,i) => {
     if (i !== 0) {
@@ -66,6 +67,33 @@ window.onload = function() {
     this.classList.toggle('display-off');
   });
 
+  // nav moving section
+  const header = document.querySelector('.header-bg-wrap').offsetHeight;
+  document.querySelector('.substrate').style.height = (header - 1) + "px";
+
+  const navbarLinks = document.querySelectorAll('.navbar li a');
+  navbarLinks.forEach(el => {
+    el.addEventListener("click", (e) => {
+      e.preventDefault();
+
+      navbarLinks.forEach(el => el.classList.remove('selected'));
+      e.target.classList.add('selected');
+
+      const blockID = e.target.getAttribute('href');
+      console.log(blockID);
+
+      const elem = document.querySelector(blockID);
+      console.dir(elem);
+      // const dest = (elem.getBoundingClientRect().top + document.body.scrollTop) - header - 1;
+      const dest = elem.offsetTop  - header + 1;
+      console.log(dest);
+
+      window.scroll({
+        top: dest,
+        behavior: 'smooth',
+      })
+    })
+  });
 }
 
 

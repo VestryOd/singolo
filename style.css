@@ -120,6 +120,7 @@ button {
   font-weight: 300;
   line-height: 30px;
   color: #767e9e;
+  overflow: hidden;
 }
 
 .section-header-wrapper {
@@ -130,6 +131,8 @@ button {
 /* part 1 styles */
 /* header styles */
 .header-bg-wrap {
+  position: fixed;
+  z-index: 999;
   width: 100%;
   padding: 22px 0 28px 0;
   border-bottom: 6px solid #323746;
@@ -590,6 +593,7 @@ button {
 .quotes .section-header-title {
   text-transform: none;
   padding-top: 1px;
+  overflow: hidden;
 }
 
 .quotes .section-header-description {
