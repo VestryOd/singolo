@@ -76,6 +76,7 @@ button {
   height: 594px;
   border-bottom: 6px solid #ea676b;
   background-color: #f06c64;
+  transition: all 0.3s ease;
 }
 
 .content-bg-wrap {
@@ -215,48 +216,116 @@ button {
 
 .slider-btn {
   position: absolute;
+  z-index: 100;
   top: 50%;
   width: 16px;
   height: 27px;
+  display: block;
+  outline: none;
   transform: translateY(-56%);
   cursor: pointer;
-  fill: #ca4549;
-  stroke: none;
-  transition: fill 0.5s ease;
+  transition: all 0.3s ease;
 }
 
-.slider-btn:hover {
-  fill: #ffffff;
+.slide {
+  z-index: 10;
+  display: block;
+  width: 1020px;
+  height: 594px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  background-repeat: no-repeat;
 }
 
-.left {
-  left: 11px;
+.showed {
+  opacity: 1;
 }
 
-.right {
-  right: 11px;
+.hidden {
+  display: none;
+}
+
+.left-arrow {
+  left: 41px;
+  background-image: url("./assets/img/slider/arrow-0.svg");
+  opacity: 0.5;
+}
+
+.left-arrow:hover {
+  background-image: url("./assets/img/slider/arrow-hover.svg");
+}
+
+.right-arrow {
+  right: 41px;
+  background-image: url("./assets/img/slider/arrow-0.svg");
+  transform: translateY(-51%) scaleX(-1);
+  opacity: 0.5;
+}
+
+.right-arrow:hover {
+  background-image: url("./assets/img/slider/arrow-hover.svg");
+}
+
+.slider-bg-blue {
+  background-color: #648bf0;
+  border-bottom: 6px solid #3a70e8;
 }
 
 .phone {
   position: absolute;
-  border-radius: 27px;
-  box-shadow: 25px 25px 2px 0 rgba(0, 0, 0, 0.15);
+  background-repeat: no-repeat;
 }
 
 .vertical {
-  left: 82px;
+  left: 112px;
   top: 53px;
-  width: 215px;
-  height: 458px;
-  background-image: url("./assets/img/slider/vertical_phone.png");
+  max-width: 240px;
+  width: 100%;
+  max-height: 483px;
+  height: 100%;
+  background-image: url("./assets/img/slider/phone-vertical.png");
 }
 
 .horizontal {
-  left: 395px;
+  left: 425px;
   top: 174px;
-  width: 458px;
-  height: 215px;
-  background-image: url("./assets/img/slider/horizontal_phone.png");
+  max-width: 483px;
+  width: 100%;
+  max-height: 240px;
+  height: 100%;
+  background-image: url("./assets/img/slider/phone-horizontal.png");
+}
+
+.display {
+  position: absolute;
+  display: block;
+  z-index: 100;
+  width: 100%;
+  height: 100%;
+  background-color: #000000;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.display-off {
+  opacity: 1;
+}
+
+.vertical-display {
+  max-width: 188px;
+  max-height: 333px;
+  left: 5.8333333333333333333333333333333%;
+  top: 13.457556935817805383022774327122%;
+}
+
+.horizontal-display {
+  max-height: 188px;
+  max-width: 333px;
+  left: 12.422360248447204968944099378882%;
+  top: 5.8333333333333333333333333333333%;
 }
 
 .section-content-wrapper {
