@@ -440,27 +440,42 @@ button {
   padding-bottom: 54px;
 }
 
-.portfolio-content-row {
+/* .portfolio-content-row {
   overflow: hidden;
   display: flex;
+  flex-direction: row;
+} */
+
+.portfolio-content {
+  display: flex;
+  flex-wrap: wrap;
   flex-direction: row;
 }
 
 .portfolio-item {
-  padding: 9px 10px;
-  box-sizing: border-box;
+  /* flex-basis: 220px; */
+  max-width: 220px;
+  height: 187px;
+  margin: 5px;
+  /* box-sizing: border-box; */
+  box-sizing: content-box;
+  border: 5px solid transparent;
+  cursor: pointer;
+  opacity: 1;
+  transition: all 0.3s ease;
+}
+
+.portfolio-item-hide {
+  opacity: 0;
 }
 
 .portfolio-item img {
   box-sizing: border-box;
-  border: 1px solid transparent;
-  cursor: pointer;
-  transition: all 0.3s ease;
+  border: none;
 }
 
-.portfolio-item img:hover {
-  border: 1px solid #ffffff;
-  box-shadow: 1px 1px 3px 1px rgba(255, 255, 255, 0.5);
+.portfolio-item-selected {
+  border: 5px solid #f06c64;
 }
 
 /* About Us section */

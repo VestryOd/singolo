@@ -86,7 +86,7 @@ window.onload = function() {
       console.dir(elem);
       // const dest = (elem.getBoundingClientRect().top + document.body.scrollTop) - header - 1;
       const dest = elem.offsetTop  - header + 1;
-      console.log(dest);
+      // console.log(dest);
 
       window.scroll({
         top: dest,
@@ -94,6 +94,60 @@ window.onload = function() {
       })
     })
   });
+
+  // portfolio section
+  const portfolioItems = document.querySelectorAll('.portfolio-item');
+  const portfolioNav = document.querySelectorAll('.portfolio-tag');
+  const portfolioParent = document.querySelector('.portfolio-content');
+  portfolioNav.forEach(el => {
+    el.addEventListener("click", (e) => {
+      portfolioNav.forEach(item => item.classList.remove('portfolio-tag-selected'));
+      el.classList.add('portfolio-tag-selected');
+
+      // randomize rotfolio items
+      const newOrder = shuffle(portfolioItems);
+
+      deleteNods(portfolioItems);
+      newOrder.forEach(el => {
+        portfolioParent.append(portfolioItems[el]);
+      });
+    });
+  });
+
+    document.querySelector('.portfolio-content').addEventListener("click", (e) => {
+    if (e.target.parentNode.classList.contains('portfolio-item')) {
+      let elem = e.target.parentNode;
+      if (elem.classList.contains('portfolio-item-selected')) {
+        elem.classList.remove('portfolio-item-selected');
+      } else {
+        document.querySelectorAll('.portfolio-item').forEach(el => el.classList.remove('portfolio-item-selected'));
+        elem.classList.add('portfolio-item-selected');
+      }
+    }
+  });
+
+  function deleteNods(arr) {
+    arr.forEach(el => {
+      el.remove()
+    });
+    return arr;
+  }
+
+  function shuffle(arr) {
+    let indexArray = [];
+    for(let i=0; i<arr.length; i++) {
+      indexArray.push(i);
+    }
+    var j, temp;
+    for (var i = indexArray.length - 1; i > 0; i--) {
+      j = Math.floor(Math.random() * (i + 1));
+      temp = indexArray[j];
+      indexArray[j] = indexArray[i];
+      indexArray[i] = temp;
+    }
+    return indexArray;
+  }
+
 }
 
 
