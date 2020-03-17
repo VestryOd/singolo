@@ -107,10 +107,21 @@ window.onload = function() {
       // randomize rotfolio items
       const newOrder = shuffle(portfolioItems);
 
-      deleteNods(portfolioItems);
-      newOrder.forEach(el => {
-        portfolioParent.append(portfolioItems[el]);
-      });
+      // deleteNods(portfolioItems);
+      // newOrder.forEach(el => {
+      //   portfolioParent.append(portfolioItems[el]);
+      // });
+      ///////////////
+      portfolioItems.forEach(item => item.classList.add('portfolio-transition'));
+      setTimeout(() => {
+        deleteNods(portfolioItems);
+        newOrder.forEach(el => {
+          portfolioParent.append(portfolioItems[el]);
+          portfolioItems.forEach(item => item.classList.remove('portfolio-transition'));
+          portfolioItems.forEach(item => item.classList.add('portfolio-transition2'));
+          setTimeout(() => portfolioItems.forEach(item => item.classList.remove('portfolio-transition2')), 300)
+        });
+      }, 300);
     });
   });
 
@@ -148,6 +159,66 @@ window.onload = function() {
     return indexArray;
   }
 
+  // // feedback form
+  // document.forms.quote.details.addEventListener('input', (e) => {
+  //   console.log(e.target.value.length)
+  //   if (e.target.value.length > 400) {
+  //     e.preventDefault();
+  //   }
+  // });
+
+  const feedbackForm = document.forms.quote.addEventListener("submit", function(e) {
+    e.preventDefault();
+    let form = e.target;
+    let data = getFormInfo(form);
+    form.reset();
+
+    // generate modal & overlay
+    let modalInner = makeModal(data);
+    let modal = generateDiv("modal");
+    modal.append(modalInner);
+    let overlay = generateDiv("overlay");
+    overlay.append(modal);
+
+    document.body.append(overlay);
+
+    document.querySelector('.overlay').addEventListener("click", removeModal);
+  });
+
+  function getFormInfo(form) {
+    let result = {};
+    result.name = form.elements.name.value;
+    result.mail = form.elements.mail.value;
+    result.subject = form.elements.subject.value ? `Subject: ${form.elements.subject.value}` : 'Without subject';
+    result.details = form.elements.details.value ? `Description: ${form.elements.details.value}` : 'Without description';
+    return result;
+  };
+
+  function generateDiv(classes) {
+    let div = document.createElement('div');
+    div.classList.add(classes);
+    return div;
+  }
+
+  function makeModal(data) {
+    let wrapper = document.createElement('div');
+    wrapper.classList.add('modal-wrapper');
+    let close = `<span class="modal-close-button"></span>`;
+    let h3 = `<h3 class="modal-header">The letter was sent</h3>`;
+    let h4 = `<h4 class="modal-subject">${data.subject}</h4>`;
+    let p = `<p class="modal-description">${data.details}</p>`;
+    let btn = `<div class="modal-button-wrapper"><button class="modal-button">ok</button></div>`;
+    let inner =close + '' + h3 + '' + h4 + '' + p + '' + btn;
+    wrapper.innerHTML = inner;
+    console.log(wrapper);
+    return wrapper;
+  }
+
+  function removeModal(e) {
+    if (e.target.classList.contains('overlay') || e.target.classList.contains('modal-close-button') || e.target.classList.contains('modal-button')) {
+      document.querySelector('.overlay').remove();
+    }
+  }
 }
 
 
