@@ -99,33 +99,37 @@ window.onload = function() {
   const portfolioItems = document.querySelectorAll('.portfolio-item');
   const portfolioNav = document.querySelectorAll('.portfolio-tag');
   const portfolioParent = document.querySelector('.portfolio-content');
-  portfolioNav.forEach(el => {
-    el.addEventListener("click", (e) => {
-      portfolioNav.forEach(item => item.classList.remove('portfolio-tag-selected'));
-      el.classList.add('portfolio-tag-selected');
 
-      // randomize rotfolio items
-      const newOrder = shuffle(portfolioItems);
-
-      // deleteNods(portfolioItems);
-      // newOrder.forEach(el => {
-      //   portfolioParent.append(portfolioItems[el]);
-      // });
-      ///////////////
-      portfolioItems.forEach(item => item.classList.add('portfolio-transition'));
-      setTimeout(() => {
-        deleteNods(portfolioItems);
-        newOrder.forEach(el => {
-          portfolioParent.append(portfolioItems[el]);
-          portfolioItems.forEach(item => item.classList.remove('portfolio-transition'));
-          portfolioItems.forEach(item => item.classList.add('portfolio-transition2'));
-          setTimeout(() => portfolioItems.forEach(item => item.classList.remove('portfolio-transition2')), 300)
-        });
-      }, 300);
-    });
+  document.querySelector('.potfolio-tags').addEventListener("click", (e) => {
+    if (e.target.classList.contains('portfolio-tag')) {
+      togglePortfolioNav(e.target, portfolioNav);
+      portfolioItemsShake(portfolioItems);
+    }
   });
 
-    document.querySelector('.portfolio-content').addEventListener("click", (e) => {
+  document.querySelector('.portfolio-content').addEventListener("click", handleItemClick);
+
+  function togglePortfolioNav(elem, portfolioNav) {
+    portfolioNav.forEach(item => item.classList.remove('portfolio-tag-selected'));
+    elem.classList.add('portfolio-tag-selected');
+  }
+
+  function portfolioItemsShake(portfolioItems) {
+    const newOrder = shuffle(portfolioItems);
+
+    portfolioItems.forEach(item => item.classList.add('portfolio-transition'));
+    setTimeout(() => {
+      deleteNods(portfolioItems);
+      newOrder.forEach(el => {
+        portfolioParent.append(portfolioItems[el]);
+        portfolioItems.forEach(item => item.classList.remove('portfolio-transition'));
+        portfolioItems.forEach(item => item.classList.add('portfolio-transition2'));
+        setTimeout(() => portfolioItems.forEach(item => item.classList.remove('portfolio-transition2')), 300)
+      });
+    }, 300);
+  }
+
+  function handleItemClick(e) {
     if (e.target.parentNode.classList.contains('portfolio-item')) {
       let elem = e.target.parentNode;
       if (elem.classList.contains('portfolio-item-selected')) {
@@ -135,7 +139,7 @@ window.onload = function() {
         elem.classList.add('portfolio-item-selected');
       }
     }
-  });
+  }
 
   function deleteNods(arr) {
     arr.forEach(el => {
@@ -149,8 +153,8 @@ window.onload = function() {
     for(let i=0; i<arr.length; i++) {
       indexArray.push(i);
     }
-    var j, temp;
-    for (var i = indexArray.length - 1; i > 0; i--) {
+    let j, temp;
+    for (let i = indexArray.length - 1; i > 0; i--) {
       j = Math.floor(Math.random() * (i + 1));
       temp = indexArray[j];
       indexArray[j] = indexArray[i];
