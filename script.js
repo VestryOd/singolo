@@ -4,9 +4,9 @@ window.onload = function() {
   const slides = document.querySelectorAll('.slide');
   slides.forEach((el,i) => {
     if (i !== 0) {
-      addHidden(el);
+      toggleClass(el, 'hidden');
     } else {
-      addShowed(el);
+      toggleClass(el, 'showed');
     }
   });
   slides[0].classList.add('showed');
@@ -24,40 +24,36 @@ window.onload = function() {
     }
     for (let i = 0; i < slides.length; i++) {
       if (slides[i].classList.contains('showed')) {
-        addHidden(removeShowed(slides[i]));
+        setTimeout(() => {
+          toggleClass(slides[i], 'showed')
+          setTimeout(() => {
+            toggleClass(slides[i], 'hidden')
+          }, 500);
+        }, 0);
       }
     }
-    addShowed(removeHidden(slides[counter - 1]));
+    setTimeout(() => {
+      toggleClass(slides[counter - 1], 'hidden')
+      setTimeout(() => {
+        toggleClass(slides[counter - 1], 'showed')
+      }, 500);
+    }, 0);
     bg.classList.toggle('slider-bg-blue');
   }
 
-  function addShowed(slide) {
-    slide.classList.add('showed');
-    return slide;
+  function toggleClass(elem,className) {
+    elem.classList.toggle(className);
+    return elem;
   }
 
-  function removeShowed(slide) {
-    slide.classList.remove('showed');
-    return slide;
-  }
-
-  function addHidden(slide) {
-    slide.classList.add('hidden');
-    return slide;
-  }
-
-  function removeHidden(slide) {
-    slide.classList.remove('hidden');
-    return slide;
-  }
-
-  prev.addEventListener("click", function () {
-    counter -= 1;
-    changeSlide(counter);
-  });
-  next.addEventListener("click", function () {
-    counter += 1;
-    changeSlide(counter);
+  document.querySelector('.slider-nav-wrapper').addEventListener('click', (e) => {
+    if (e.target.classList.contains('left-arrow')) {
+      counter -= 1;
+      changeSlide(counter);
+    } else {
+      counter += 1;
+      changeSlide(counter);
+    }
   });
 
   document.querySelector('.vertical-display').addEventListener("click", function() {
@@ -80,13 +76,9 @@ window.onload = function() {
       e.target.classList.add('selected');
 
       const blockID = e.target.getAttribute('href');
-      console.log(blockID);
 
       const elem = document.querySelector(blockID);
-      console.dir(elem);
-      // const dest = (elem.getBoundingClientRect().top + document.body.scrollTop) - header - 1;
       const dest = elem.offsetTop  - header + 1;
-      // console.log(dest);
 
       window.scroll({
         top: dest,
@@ -217,7 +209,6 @@ window.onload = function() {
     let btn = `<div class="modal-button-wrapper"><button class="modal-button">ok</button></div>`;
     let inner = close + '' + h3 + '' + h4 + '' + p + '' + btn;
     wrapper.innerHTML = inner;
-    console.log(wrapper);
     return wrapper;
   }
 
