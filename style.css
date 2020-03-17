@@ -799,9 +799,11 @@ button {
   }
 }
 
+/* Modal popup */
 .overlay {
   position: fixed;
   overflow: hidden;
+  poacity: 1;
   width: 100%;
   height: 100%;
   left: 0;
@@ -811,6 +813,7 @@ button {
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: opacity 0.3s ease-in-out;
 }
 
 .modal {
@@ -838,6 +841,7 @@ button {
 
 .modal-header {
   padding: 15px;
+  padding-top: 20px;
   font-size: 24px;
   line-height: 24px;
 }
@@ -859,7 +863,7 @@ button {
 .modal-button-wrapper {
   position: absolute;
   left: 0;
-  bottom: 15px;
+  bottom: 20px;
   display: flex;
   justify-content: center;
   width: 100%;
@@ -887,7 +891,6 @@ button {
   right: 15px;
   width: 20px;
   height: 20px;
-  /* padding: 2px; */
   border-radius: 50%;
   cursor: pointer;
   background-image: url("./assets/img/modal/close_grey.svg");
@@ -898,26 +901,7 @@ button {
   background-color: #f48c8f;
 }
 
-.modal-transition-out {
-  opacity: 1;
-  animation: animate-modal 0.3s linear forwards;
-}
-
-.modal-transition-in {
-  opacity: 0;
-  animation: animate-modal 0.3s linear reverse forwards;
-}
-
-@keyframes animate-modal {
-  from {
-    opacity: 0;
-  }
-
-  to {
-    opacity: 1;
-  }
-}
-
 .modal-view {
   opacity: 0;
+  transition: opacity 0.3s ease-in-out;
 }

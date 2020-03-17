@@ -159,31 +159,34 @@ window.onload = function() {
     return indexArray;
   }
 
-  // // feedback form
-  // document.forms.quote.details.addEventListener('input', (e) => {
-  //   console.log(e.target.value.length)
-  //   if (e.target.value.length > 400) {
-  //     e.preventDefault();
-  //   }
-  // });
-
+  // feedback form
   const feedbackForm = document.forms.quote.addEventListener("submit", function(e) {
     e.preventDefault();
     let form = e.target;
     let data = getFormInfo(form);
-    form.reset();
 
-    // generate modal & overlay
+    // generate & show modal
+    modalBuild(data);
+    // clear form
+    form.reset();
+  });
+
+  function modalBuild(data) {
     let modalInner = makeModal(data);
     let modal = generateDiv("modal");
     modal.append(modalInner);
     let overlay = generateDiv("overlay");
     overlay.append(modal);
+    overlay.classList.add('modal-view');
 
-    document.body.append(overlay);
-
-    document.querySelector('.overlay').addEventListener("click", removeModal);
-  });
+    setTimeout(() => {
+      document.body.append(overlay);
+      document.querySelector('.overlay').addEventListener("click", removeModal);
+      setTimeout(() => {
+        overlay.classList.remove('modal-view');
+      }, 300);
+    }, 0);
+  }
 
   function getFormInfo(form) {
     let result = {};
@@ -208,7 +211,7 @@ window.onload = function() {
     let h4 = `<h4 class="modal-subject">${data.subject}</h4>`;
     let p = `<p class="modal-description">${data.details}</p>`;
     let btn = `<div class="modal-button-wrapper"><button class="modal-button">ok</button></div>`;
-    let inner =close + '' + h3 + '' + h4 + '' + p + '' + btn;
+    let inner = close + '' + h3 + '' + h4 + '' + p + '' + btn;
     wrapper.innerHTML = inner;
     console.log(wrapper);
     return wrapper;
@@ -216,7 +219,13 @@ window.onload = function() {
 
   function removeModal(e) {
     if (e.target.classList.contains('overlay') || e.target.classList.contains('modal-close-button') || e.target.classList.contains('modal-button')) {
-      document.querySelector('.overlay').remove();
+      setTimeout(() => {
+        let overlay = document.querySelector('.overlay');
+        overlay.classList.add('modal-view');
+        setTimeout(() => {
+          document.querySelector('.overlay').remove();
+        }, 300);
+      }, 0);
     }
   }
 }
