@@ -12,8 +12,6 @@ window.onload = function() {
   slides[0].classList.add('showed');
   let counter = 1;
 
-  let prev = document.querySelector('.left-arrow');
-  let next = document.querySelector('.right-arrow');
   let bg = document.querySelector('.slider-bg-wrap');
 
   function changeSlide(index) {
@@ -64,12 +62,13 @@ window.onload = function() {
   });
 
   // nav moving section
-  const header = document.querySelector('.header-bg-wrap').offsetHeight;
+  let header = document.querySelector('.header-bg-wrap').offsetHeight;
   document.querySelector('.substrate').style.height = (header - 1) + "px";
 
   const navbarLinks = document.querySelectorAll('.navbar li a');
-  navbarLinks.forEach(el => {
-    el.addEventListener("click", (e) => {
+
+  document.querySelector('.navbar').addEventListener('click', (e) => {
+    if (e.target.classList.contains('navlink')) {
       e.preventDefault();
 
       navbarLinks.forEach(el => el.classList.remove('selected'));
@@ -78,14 +77,38 @@ window.onload = function() {
       const blockID = e.target.getAttribute('href');
 
       const elem = document.querySelector(blockID);
-      const dest = elem.offsetTop  - header + 1;
+      const dest = elem.offsetTop - header + 1;
 
       window.scroll({
         top: dest,
         behavior: 'smooth',
       })
-    })
+    }
   });
+
+  document.addEventListener('scroll', () => {
+    handleScroll(header, navbarLinks);
+  });
+
+  function handleScroll(header, navlinks) {
+    let currentPosition = window.scrollY;
+
+    const blocks = document.querySelectorAll('.section-block');
+
+    blocks.forEach(el => {
+      if (el.offsetTop - header <= currentPosition && (el.offsetTop + el.offsetHeight - header) > currentPosition) {
+        navlinks.forEach(link => {
+          link.classList.remove('selected');
+          if (el.getAttribute('id') === link.getAttribute('href').substring(1)) {
+            link.classList.add('selected');
+          }
+        });
+      } else if (currentPosition === 0) {
+        navlinks.forEach(link => link.classList.remove('selected'));
+        navlinks[0].classList.add('selected');
+      }
+    });
+  }
 
   // portfolio section
   const portfolioItems = document.querySelectorAll('.portfolio-item');
