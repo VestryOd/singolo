@@ -1,58 +1,86 @@
 'use strict'
 window.onload = function() {
-  //slider section
+  ///////////////////////////////slider section
+  const bg = document.querySelector('.slider-bg-wrap');
   const slides = document.querySelectorAll('.slide');
-  slides.forEach((el,i) => {
-    if (i !== 0) {
-      toggleClass(el, 'hidden');
-    } else {
-      toggleClass(el, 'showed');
-    }
-  });
-  slides[0].classList.add('showed');
-  let counter = 1;
+  slides[0].style.zIndex = '30';
+  let notAnimated = true;
+  let count = 0;
 
-  let bg = document.querySelector('.slider-bg-wrap');
-
-  function changeSlide(index) {
-    if (index < 1) {
-      counter = slides.length;
-    } else if (index > slides.length) {
-      counter = 1;
-    }
-    for (let i = 0; i < slides.length; i++) {
-      if (slides[i].classList.contains('showed')) {
-        setTimeout(() => {
-          toggleClass(slides[i], 'showed')
-          setTimeout(() => {
-            toggleClass(slides[i], 'hidden')
-          }, 500);
-        }, 0);
+  function defineNextSlide(direction) {
+    let next;
+    if (direction === "left") {
+      if (count === slides.length - 1) {
+        count = 0;
+        next = slides[count];
+      } else {
+        count++;
+        next = slides[count];
+      }
+    } else if (direction === "right") {
+      if (count === 0) {
+        count = slides.length - 1;
+        next = slides[count];
+      } else {
+        count--;
+        next = slides[count];
       }
     }
-    setTimeout(() => {
-      toggleClass(slides[counter - 1], 'hidden')
-      setTimeout(() => {
-        toggleClass(slides[counter - 1], 'showed')
-      }, 500);
-    }, 0);
-    bg.classList.toggle('slider-bg-blue');
+    return next;
   }
 
-  function toggleClass(elem,className) {
-    elem.classList.toggle(className);
-    return elem;
-  }
+
 
   document.querySelector('.slider-nav-wrapper').addEventListener('click', (e) => {
-    if (e.target.classList.contains('left-arrow')) {
-      counter -= 1;
-      changeSlide(counter);
-    } else {
-      counter += 1;
-      changeSlide(counter);
+    e.target.setAttribute("disabled", true);
+    if (notAnimated) {
+      slider(e);
     }
+
   });
+
+  function slider(e) {
+    if (notAnimated) {
+      notAnimated = !notAnimated;
+
+      let currentSlide = document.querySelector('.slide:not(.slide-hidden)');
+      let nextSlide, firstStep, secondStep;
+
+      if (e.target.classList.contains('left-arrow')) {
+        nextSlide = defineNextSlide("left");
+        firstStep = 'offset-left';
+        secondStep = 'offset-right';
+      } else {
+        nextSlide = defineNextSlide("right");
+        firstStep = 'offset-right';
+        secondStep = 'offset-left';
+      }
+
+      setTimeout(() => {
+        nextSlide.classList.add(secondStep);
+        nextSlide.addEventListener('transitionend', () => {
+          nextSlide.classList.remove('slide-hidden');
+          nextSlide.classList.remove(secondStep);
+        }, { once: true });
+        currentSlide.classList.add(firstStep);
+      }, 0);
+
+      currentSlide.addEventListener('transitionend', () => {
+        currentSlide.classList.add('slide-hidden');
+        nextSlide.style.zIndex = '30';
+        currentSlide.style.zIndex = '20';
+        setTimeout(() => {
+          currentSlide.classList.remove(firstStep);
+        }, 300);
+        notAnimated = !notAnimated;
+      }, { once: true });
+      bg.classList.toggle('slider-bg-blue');
+    }
+    setTimeout(() => {
+      e.target.removeAttribute("disabled");
+    }, 400);
+
+  }
 
   document.querySelector('.vertical-display').addEventListener("click", function() {
     this.classList.toggle('display-off');
@@ -61,7 +89,7 @@ window.onload = function() {
     this.classList.toggle('display-off');
   });
 
-  // nav moving section
+  /////////////////////////////// nav moving section
   let header = document.querySelector('.header-bg-wrap').offsetHeight;
   document.querySelector('.substrate').style.height = (header - 1) + "px";
 
@@ -110,7 +138,7 @@ window.onload = function() {
     });
   }
 
-  // portfolio section
+  /////////////////////////////// portfolio section
   const portfolioItems = document.querySelectorAll('.portfolio-item');
   const portfolioNav = document.querySelectorAll('.portfolio-tag');
   const portfolioParent = document.querySelector('.portfolio-content');
@@ -178,7 +206,7 @@ window.onload = function() {
     return indexArray;
   }
 
-  // feedback form
+  /////////////////////////////// feedback form
   const feedbackForm = document.forms.quote.addEventListener("submit", function(e) {
     e.preventDefault();
     let form = e.target;
