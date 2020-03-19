@@ -694,9 +694,13 @@ button {
 }
 
 .input-wrapper input[type="submit"] {
-  width: 100px;
-  border: 1px solid #ffffff;
-  color: #ffffff;
+  width: 136px;
+  padding: 10px 15px;
+  background-color: #fbc65f;
+  color: #886a30;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 17px;
   text-align: center;
   text-transform: uppercase;
   cursor: pointer;
@@ -715,7 +719,8 @@ button {
 
 .button-aligh-center {
   display: flex;
-  justify-content: center;
+  justify-content: start;
+  margin-bottom: 54px;
 }
 
 .contacts-wrapper {

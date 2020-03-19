@@ -207,15 +207,16 @@ window.onload = function() {
   }
 
   /////////////////////////////// feedback form
+  let form;
   const feedbackForm = document.forms.quote.addEventListener("submit", function(e) {
     e.preventDefault();
-    let form = e.target;
+    form = e.target;
     let data = getFormInfo(form);
 
     // generate & show modal
     modalBuild(data);
     // clear form
-    form.reset();
+    // form.reset();
   });
 
   function modalBuild(data) {
@@ -268,6 +269,7 @@ window.onload = function() {
       setTimeout(() => {
         let overlay = document.querySelector('.overlay');
         overlay.classList.add('modal-view');
+        form.reset();
         setTimeout(() => {
           document.querySelector('.overlay').remove();
         }, 300);
