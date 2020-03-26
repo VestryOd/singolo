@@ -276,6 +276,36 @@ window.onload = function() {
       }, 0);
     }
   }
+
+  /////////////////////////////// navbar
+  const nav = document.querySelector('.nav');
+  const navbar = document.querySelectorAll('.navbar li a');
+  const navOverlay = document.querySelector('.nav-overlay');
+  const toggleNav = document.querySelector('.toggle-nav-wrapper')
+
+  navbar.forEach(el => {
+    el.addEventListener('click', (e) => {
+      toggleNavMenu();
+    })
+  });
+
+  navOverlay.addEventListener('click', (e) => {
+    if (e.target.classList.contains('nav-overlay')) {
+      toggleNavMenu();
+    }
+  });
+
+  toggleNav.addEventListener('click', (e) => {
+    toggleNavMenu();
+  });
+
+  function toggleNavMenu() {
+    setTimeout(() => {
+      nav.classList.toggle('nav-shown');
+      navOverlay.classList.toggle('nav-overlay-shown');
+      toggleNav.classList.toggle('toggle-nav-select');
+    }, 0);
+  }
 }
 
 
