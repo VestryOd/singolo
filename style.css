@@ -529,7 +529,8 @@ button {
 .portfolio-item {
   overflow: hidden;
   max-width: 22.91666666666667%;
-  height: 187px;
+  /* height: 187px; */
+  min-height: 1px;
   margin: 5px;
   box-sizing: content-box;
   border: 5px solid transparent;
@@ -544,6 +545,7 @@ button {
 
 .portfolio-item img {
   max-width: 100%;
+  height: 100%;
   box-sizing: border-box;
   border: none;
 }
@@ -1003,6 +1005,10 @@ button {
   .portfolio-item {
     max-width: calc(33.333% - 20px);
     width: 100%;
+    min-height: 1px;
+  }
+
+  .portfolio-item img {
     height: 100%;
   }
 }
@@ -1130,10 +1136,11 @@ button {
   .portfolio-item {
     width: calc(50% - 20px);
     max-width: none;
+    min-height: 1px;
   }
 
   .portfolio-item img {
-    height: auto;
+    height: 100%;
   }
 
   .about-description-padding {
